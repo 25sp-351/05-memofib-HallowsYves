@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define MAX_SIZE 100
 
-int already_calculated[MAX_SIZE];
+long long already_calculated[MAX_SIZE];
 
 void initialize_array() {
     for (int index = 0; index < MAX_SIZE; index++) {
@@ -9,7 +9,7 @@ void initialize_array() {
     }
 }
 
-int fibonacci(int x) {
+long long fibonacci(int x) {
   if (x == 0) {
     return 0;
   }
@@ -28,6 +28,9 @@ int fibonacci(int x) {
 
 int main() {
     initialize_array();
-    printf("%d\n", fibonacci(5));
+    for (int count = 0; count < 91; count ++) {
+        printf("Fib of: %d\n", count);
+        printf("%lld\n", fibonacci(count));
+    }
     return 0;
 }
